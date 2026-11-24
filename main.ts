@@ -4,11 +4,8 @@ const SENTENCE =
   "You stand in a market square in 1800, and a farmer holds up a flat stone that shows you the price of wheat in London, a play in Paris, and your mother's face — all at once, all alive.";
 
 const n = [...SENTENCE].length;
-if (n < 1 || n > 200 || SENTENCE.trim() !== SENTENCE) {
+if (n < 1 || n > 200 || SENTENCE.trim() !== SENTENCE || SENTENCE.includes("\n") || SENTENCE.includes("\r")) {
   throw new Error("sentence must be a single 1-200 character line");
-}
-if (SENTENCE.includes("\n") || SENTENCE.includes("\r")) {
-  throw new Error("sentence must be a single line");
 }
 
 mkdirSync("/output", { recursive: true });
